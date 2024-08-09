@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducation</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="home.html">Muskie</a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-info-circle"></i> Information <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="habitat.html">Habitat & Range</a></li>
+                        <li><a href="diet.html">Diet & Behavior</a></li>
+                        <li><a href="reproduction.html">Reproduction</a></li>
+                        <li><a href="cultural.html">Cultural Significance</a></li>
+                    </ul>
+                </li>
+                <li><a href="fishing.html"><i class="fas fa-anchor"></i> Fishing Tips</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Reproduction Section Start -->
+<section class="reproduction-section">
+    <div class="container">
+        <h2>Reproduction of the Muskie</h2>
+        <p>The reproductive habits of the muskie are fascinating and crucial for maintaining healthy populations. This section delves into the muskie's spawning season, egg-laying process, and the development of young muskies.</p>
+
+        <h3>Spawning Season and Locations</h3>
+        <p>Muskies typically spawn in the spring when water temperatures reach around 50°F (10°C). They prefer shallow waters with abundant vegetation, which provides a suitable environment for egg deposition and protection.</p>
+
+        <h3>Egg Laying and Development</h3>
+        <p>Female muskies lay thousands of eggs in shallow waters. The eggs are adhesive and stick to underwater vegetation or other substrates. The incubation period varies depending on water temperature, usually taking 8 to 14 days before hatching. Notably, muskie parents do not provide care for the eggs or young.</p>
+
+        <h3>Growth Stages</h3>
+        <p>After hatching, young muskies, known as fry, are highly vulnerable and rely on zooplankton and small invertebrates for food. As they grow, they transition to a diet of small fish and other aquatic organisms. Muskies experience rapid growth in the first few years, quickly reaching lengths that reduce predation risks.</p>
+
+        <div class="gallery">
+            <img src="img/path_to_image1.jpg" alt="Spawning Habitat">
+            <img src="img/path_to_image2.jpg" alt="Egg Laying">
+            <img src="img/path_to_image3.jpg" alt="Young Muskie">
+        </div>
+    </div>
+</section>
+<!-- Reproduction Section End -->
+
+<!-- Footer Start -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Muskie Enthusiasts. All rights reserved.</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Font Awesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</body>
+</html>
+
+
+<style>
+    .reproduction-section {
+        margin-top: 160px; /* Add margin equal to the header height */
+        padding-bottom: 20px;
+        flex-grow: 1; /* Ensure it grows to fill the space */
+        text-align: justify; /* Justify text for better readability */
+    }
+
+    .reproduction-section .image-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the images in the row */
+        gap: 20px; /* Space between images */
+    }
+
+    .reproduction-section img {
+        max-width: calc(50% - 20px); /* Two images per row with space between */
+        height: auto;
+        display: inline-flex;
+        margin: 0; /* Remove margin since flexbox handles spacing */
+        border-radius: 10px; /* Optional: Rounded corners */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .reproduction-section img:hover {
+        transform: scale(1.15); /* Slightly enlarge the image on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
+    }
+
+</style>
+
+

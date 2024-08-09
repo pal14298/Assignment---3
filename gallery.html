@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="home.html">Muskie</a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-info-circle"></i> Information <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="habitat.html">Habitat & Range</a></li>
+                        <li><a href="diet.html">Diet & Behavior</a></li>
+                        <li><a href="reproduction.html">Reproduction</a></li>
+                        <li><a href="cultural.html">Cultural Significance</a></li>
+                    </ul>
+                </li>
+                <li><a href="fishing.html"><i class="fas fa-anchor"></i> Fishing Tips</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Gallery Section Start -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="image-group">
+            <div class="image-item">
+                <img src="img/placeholder_gallery1.jpg" alt="Placeholder image for Muskie 1">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery2.jpg" alt="Placeholder image for Muskie 2">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery3.jpg" alt="Placeholder image for Muskie 3">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery4.jpg" alt="Placeholder image for Muskie 4">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery5.jpg" alt="Placeholder image for Muskie 5">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery6.jpg" alt="Placeholder image for Muskie 6">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery7.jpg" alt="Placeholder image for Muskie 7">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery8.jpg" alt="Placeholder image for Muskie 8">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery9.jpg" alt="Placeholder image for Muskie 9">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery10.jpg" alt="Placeholder image for Muskie 10">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery11.jpg" alt="Placeholder image for Muskie 11">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery12.jpg" alt="Placeholder image for Muskie 12">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery13.jpg" alt="Placeholder image for Muskie 13">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery14.jpg" alt="Placeholder image for Muskie 14">
+            </div>
+            <div class="image-item">
+                <img src="img/placeholder_gallery15.jpg" alt="Placeholder image for Muskie 15">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Gallery Section End -->
+
+<!-- Lightbox for Image Preview -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+</div>
+
+<!-- Footer Start -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Muskie Enthusiasts. All rights reserved.</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<script>
+    // Get the modal
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.image-item img');
+    const lightboxImg = document.getElementById("lightbox-img");
+    const captionText = document.getElementById("caption");
+
+    function showImage(index) {
+        lightbox.style.display = "flex";
+        lightboxImg.src = images[index].src;
+        captionText.innerHTML = images[index].alt;
+        currentImageIndex = index;
+    }
+
+    images.forEach((image, index) => {
+        image.addEventListener('click', function(){
+            showImage(index);
+        });
+    });
+
+    document.querySelector('.close').onclick = function() {
+        lightbox.style.display = "none";
+    };
+
+    // Add navigation functionality
+    document.querySelector('.prev').onclick = function() {
+        currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1;
+        showImage(currentImageIndex);
+    };
+
+    document.querySelector('.next').onclick = function() {
+        currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+        showImage(currentImageIndex);
+    };
+
+    // Close the lightbox when clicking outside of the image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target !== lightboxImg && e.target !== document.querySelector('.prev') && e.target !== document.querySelector('.next')) {
+            lightbox.style.display = "none";
+        }
+    });
+
+    let autoSlideInterval = setInterval(function() {
+        currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+        showImage(currentImageIndex);
+    }, 5000); // 5000ms = 5 seconds
+
+    // Clear the interval when lightbox is closed
+    document.querySelector('.close').onclick = function() {
+        clearInterval(autoSlideInterval);
+        lightbox.style.display = "none";
+    };
+
+    images.forEach((image, index) => {
+        image.addEventListener('click', function(){
+            lightbox.style.display = "flex"; // This should trigger the flexbox centering
+            lightboxImg.src = images[index].src;
+            captionText.innerHTML = images[index].alt;
+        });
+    });
+
+</script>
+
+</body>
+</html>
+
+<style>
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+
+</style>
+
+
